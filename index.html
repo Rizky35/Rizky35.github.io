@@ -310,6 +310,10 @@
 	  </style>
 	</head>
 	<body onload="init()">
+		<!--<audio preload="auto" autobuffer>
+		  <source src="/Audio/Attention.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+		</audio>-->
 		<div class="kontrol" onload="readStorage()">
 			<div class="panah"></div>
 			<div class="custom-control custom-radio">
@@ -354,7 +358,7 @@
 		    </div> 
 		    <div class="custom-control custom-radio">
 		      <input type="radio" class="custom-control-input" id="customRadio9" name="example1">
-		      <label class="custom-control-label" for="customRadio9">RGB Gaming</label>
+		      <label class="custom-control-label" for="customRadio9">RGB Gaming :v</label>
 		    </div> 
 		    <input class="btn mt-3" id="color-picker" value='#0079FF' onclick="onClickWarna()" />
 		</div>
@@ -393,9 +397,10 @@
 			<div class="ucapan" id="quote"></div>
 			<div class="note">ngeng</div>
 			<div class="pengembang">Rizky</div>
-			<!--<div class="sound">
+			<div class="sound">
 				<span id='player'></span>
-			</div>-->
+				<!--<audio id="audiospecial" src="Audio/Make You Mine.mp3" preload="auto"></audio>-->
+			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -417,19 +422,6 @@
 			    characters: 'supercalifragilisticexpialidocious',
 			    speed: 150
 			});
-			function randomAudio(){
-				 var sounds = [
-					"/home/rizky/Desktop/Audio/Attention.mp3",
-					"/home/rizky/Desktop/Audio/Feeling Lonely.mp3",
-					"/home/rizky/Desktop/Audio/Losing You.mp3",
-					"/home/rizky/Desktop/Audio/Reality Club.mp3",
-					"/home/rizky/Desktop/Audio/Bitterlove.mp3",
-					"/home/rizky/Desktop/Audio/I Don t Care.mp3",
-					"/home/rizky/Desktop/Audio/My Favourite Clothes.mp3"];
-
-				 var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
-				 document.getElementById("player").innerHTML="<embed src=\""+soundFile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
-			}
 			function readMode(){
 				if(localStorage.getItem("mode")!=null){
 
@@ -539,6 +531,7 @@
 				}
 				else if(localStorage.getItem("manualColor")=="#000000"){
 					setTimeout(function() { createNote("Jadian yuk, hueheheh :v "); }, 5000);
+					$('<audio width="150px" height="25" allow=”autoplay” autoplay="autoplay" src="Audio/Make You Mine.mp3">If stream does not start automatically press the play button</audio>').prependTo('body');
 				}
 			}
 			function createNote(isi){
@@ -575,22 +568,51 @@
 			});
 			$(".jam").click(function(){
 				var sounds = [
-					"/home/rizky/Desktop/Audio/Attention.mp3",
-					"/home/rizky/Desktop/Audio/Feeling Lonely.mp3",
-					"/home/rizky/Desktop/Audio/Losing You.mp3",
-					"/home/rizky/Desktop/Audio/Reality Club.mp3",
-					"/home/rizky/Desktop/Audio/Bitterlove.mp3",
-					"/home/rizky/Desktop/Audio/I Don t Care.mp3",
-					"/home/rizky/Desktop/Audio/My Favourite Clothes.mp3"];
+					"/Audio/Lana Del Rey - Young and Beautiful.mp3",
+					"/Audio/Lighthouse Grouper.mp3",
+					"/Audio/Attention.mp3",
+					"/Audio/Feeling Lonely.mp3",
+					"/Audio/Losing You.mp3",
+					"/Audio/Reality Club.mp3",
+					"/Audio/Bitterlove.mp3",
+					"/Audio/I Don t Care.mp3",
+					"/Audio/My Favourite Clothes.mp3"];
 
 				var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
-				document.getElementById("player").innerHTML="<embed src=\""+soundFile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+				document.getElementById("player").innerHTML="<audio id=\"audiotag\" src=\""+soundFile+"\" preload=\"auto\"></audio>";
+				play_single_sound();
 			});
 			$(".ucapan").click(function(){
-				function play() {
-				  var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3');
-				  audio.play();
-				}
+				var sounds = [
+					"/Audio/Lana Del Rey - Young and Beautiful.mp3",
+					"/Audio/Lighthouse Grouper.mp3",
+					"/Audio/Attention.mp3",
+					"/Audio/Feeling Lonely.mp3",
+					"/Audio/Losing You.mp3",
+					"/Audio/Reality Club.mp3",
+					"/Audio/Bitterlove.mp3",
+					"/Audio/I Don t Care.mp3",
+					"/Audio/My Favourite Clothes.mp3"];
+
+				var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
+				document.getElementById("player").innerHTML="<audio id=\"audiotag\" src=\""+soundFile+"\" preload=\"auto\"></audio>";
+				play_single_sound();
+			});
+			$(".kotak").click(function(){
+				var sounds = [
+					"/Audio/Lana Del Rey - Young and Beautiful.mp3",
+					"/Audio/Lighthouse Grouper.mp3",
+					"/Audio/Attention.mp3",
+					"/Audio/Feeling Lonely.mp3",
+					"/Audio/Losing You.mp3",
+					"/Audio/Reality Club.mp3",
+					"/Audio/Bitterlove.mp3",
+					"/Audio/I Don t Care.mp3",
+					"/Audio/My Favourite Clothes.mp3"];
+
+				var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
+				document.getElementById("player").innerHTML="<audio id=\"audiotag\" src=\""+soundFile+"\" preload=\"auto\"></audio>";
+				play_single_sound();
 			});
 			auto=true;
 			cek=false;
@@ -1096,6 +1118,13 @@
 				}
 			}
 			typeWriter();
+			function play_single_sound() {
+				document.getElementById('audiotag').play();
+			}
+			function AlertFunction() {
+				alert("Kalau kamu pencet jam atau ucapan dibawahnya nanti ada musiknya");
+			}
+			AlertFunction();
 		</script>
 	</body>
 </html>
