@@ -108,22 +108,6 @@
 	  		transition: all 1 ease;
 	  		z-index: 99;
 	  	}
-	  	.panah{
-	  		content: '';
-	  		width: 10px;
-	  		height: 10px;
-	  		position: absolute;
-	  		top: calc(50% - 5px);
-	  		right: -30px;
-	  		border: 2px solid rgba(255,255,255,0.2);
-	  		border-bottom: none;
-	  		border-left: none;
-	  		border-radius: 2px;
-	  		border-top-left-radius: 3px;
-	  		border-bottom-right-radius: 3px;
-	  		transform: rotate(45deg);
-	  		z-index: 50;
-	  	}
 	  	#color-picker{
 	  		width: 100%;
 	  	}
@@ -310,10 +294,6 @@
 	  </style>
 	</head>
 	<body onload="init()">
-		<!--<audio preload="auto" autobuffer>
-		  <source src="/Audio/Attention.mp3" type="audio/mpeg">
-		Your browser does not support the audio element.
-		</audio>-->
 		<div class="kontrol" onload="readStorage()">
 			<div class="panah"></div>
 			<div class="custom-control custom-radio">
@@ -399,7 +379,6 @@
 			<div class="pengembang">Rizky</div>
 			<div class="sound">
 				<span id='player'></span>
-				<!--<audio id="audiospecial" src="Audio/Make You Mine.mp3" preload="auto"></audio>-->
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -526,13 +505,6 @@
 				}
 			}
 			function specialEffects(){
-				if(localStorage.getItem("manualColor")=="#4c1130"){
-					setTimeout(function() { createNote("Semangat Belajarnya :) "); }, 5000);
-				}
-				else if(localStorage.getItem("manualColor")=="#000000"){
-					setTimeout(function() { createNote("Jadian yuk, hueheheh :v "); }, 5000);
-					$('<audio width="150px" height="25" allow=”autoplay” autoplay="autoplay" src="Audio/Make You Mine.mp3">If stream does not start automatically press the play button</audio>').prependTo('body');
-				}
 			}
 			function createNote(isi){
 				$(".jam").css("font-size","30pt").css("bottom","calc( 50% - 50px )");
@@ -565,54 +537,6 @@
 					$(".kontrol").animate({left: "-220px"});
 					tombol=false;
 				}
-			});
-			$(".jam").click(function(){
-				var sounds = [
-					"/Audio/Lana Del Rey - Young and Beautiful.mp3",
-					"/Audio/Lighthouse Grouper.mp3",
-					"/Audio/Attention.mp3",
-					"/Audio/Feeling Lonely.mp3",
-					"/Audio/Losing You.mp3",
-					"/Audio/Reality Club.mp3",
-					"/Audio/Bitterlove.mp3",
-					"/Audio/I Don t Care.mp3",
-					"/Audio/My Favourite Clothes.mp3"];
-
-				var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
-				document.getElementById("player").innerHTML="<audio id=\"audiotag\" src=\""+soundFile+"\" preload=\"auto\"></audio>";
-				play_single_sound();
-			});
-			$(".ucapan").click(function(){
-				var sounds = [
-					"/Audio/Lana Del Rey - Young and Beautiful.mp3",
-					"/Audio/Lighthouse Grouper.mp3",
-					"/Audio/Attention.mp3",
-					"/Audio/Feeling Lonely.mp3",
-					"/Audio/Losing You.mp3",
-					"/Audio/Reality Club.mp3",
-					"/Audio/Bitterlove.mp3",
-					"/Audio/I Don t Care.mp3",
-					"/Audio/My Favourite Clothes.mp3"];
-
-				var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
-				document.getElementById("player").innerHTML="<audio id=\"audiotag\" src=\""+soundFile+"\" preload=\"auto\"></audio>";
-				play_single_sound();
-			});
-			$(".kotak").click(function(){
-				var sounds = [
-					"/Audio/Lana Del Rey - Young and Beautiful.mp3",
-					"/Audio/Lighthouse Grouper.mp3",
-					"/Audio/Attention.mp3",
-					"/Audio/Feeling Lonely.mp3",
-					"/Audio/Losing You.mp3",
-					"/Audio/Reality Club.mp3",
-					"/Audio/Bitterlove.mp3",
-					"/Audio/I Don t Care.mp3",
-					"/Audio/My Favourite Clothes.mp3"];
-
-				var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
-				document.getElementById("player").innerHTML="<audio id=\"audiotag\" src=\""+soundFile+"\" preload=\"auto\"></audio>";
-				play_single_sound();
 			});
 			auto=true;
 			cek=false;
@@ -1121,10 +1045,6 @@
 			function play_single_sound() {
 				document.getElementById('audiotag').play();
 			}
-			function AlertFunction() {
-				alert("Kalau kamu pencet jam atau ucapan dibawahnya nanti ada musiknya random");
-			}
-			AlertFunction();
 		</script>
 	</body>
 </html>
