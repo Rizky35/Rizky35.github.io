@@ -376,7 +376,7 @@
 			</div>
 			<div class="ucapan" id="quote"></div>
 			<div class="note">ngeng</div>
-			<div class="pengembang">Rizky</div>
+			<div class="pengembang">Anonymous</div>
 			<div class="sound">
 				<span id='player'></span>
 			</div>
@@ -496,12 +496,12 @@
 				namaku = $(".pengembang").text();
 			    var hex, i;
 
-			    var result = "Rizky";
+			    var result = "Anonymous";
 			    for (i=0; i<namaku.length; i++) {
 			        hex = namaku.charCodeAt(i).toString(16);
 			        //result += ("000"+hex).slice(-4);//
 			    }
-				if (result!="Rizky"){
+				if (result!="Anonymous"){
 					$('body').fadeOut();
 				}
 			}
@@ -862,37 +862,37 @@
 				S=s;
 
 				if (H<5){
-					txt='Have a Good Night:)';
+					txt='Have a Good Night';
 					if(txt != txt2 && !starting)
 						document.getElementById("quote").innerHTML = txt;
 					txt2=txt;
 				}
 				else if(H<9){
-					txt='Good Morning You:)';
+					txt='Good Morning You';
 					if(txt != txt2 && !starting)
 						document.getElementById("quote").innerHTML = txt;
 					txt2=txt;
 				}
 				else if(H<12){
-					txt='Be Happy Today:)';
+					txt='Be Happy Today';
 					if(txt != txt2 && !starting)
 						document.getElementById("quote").innerHTML = txt;
 					txt2=txt;
 				}
 				else if(H<16){
-					txt='Good Afternoon Dear:)';
+					txt='Good Afternoon Dear';
 					if(txt != txt2 && !starting)
 						document.getElementById("quote").innerHTML = txt;
 					txt2=txt;
 				}
 				else if(H<19){
-					txt='Good Afternoon, Take a Rest:)';
+					txt='Good Afternoon, Take a Rest';
 					if(txt != txt2 && !starting)
 						document.getElementById("quote").innerHTML = txt;
 					txt2=txt;
 				}
 				else if(H<23){
-					txt='Good Evening Sweetie:)';
+					txt='Good Evening';
 					if(txt != txt2 && !starting)
 						document.getElementById("quote").innerHTML = txt;
 					txt2=txt;
@@ -967,52 +967,8 @@
 
 			const quotes = [
 			  {
-			    "quote": "Bila kau tak tahan lelahnya belajar, maka kau harus tahan menanggung perihnya kebodohan",
-			    "source": "Imam Syafi'i"
-			  },
-			  {
-			    "quote": "Jangan bergadang mulu, nanti kalau sakit siapa yang repot... ya orang tua Kamu lah..",
-			    "source": "Om Ganteng"
-			  },
-			  {
-			    "quote": "Jika Kamu merasa tidak berguna, Maka pikirlah perasaan huruf \"E\" di kata \"Es Batu\" ",
-			    "source": "Om Ganteng"
-			  },
-			  {
-			    "quote": "You don't lose, You learn",
-			    "source": "Om Ganteng"
-			  },
-			  {
-			    "quote": "Jadi pengen buat buku bareng sama Kamu, tau buku apa?.. buku nikah :v ",
-			    "source": "Om Ganteng"
-			  },
-			  {
-			    "quote": "Berharap untuk yang terbaik, namun bersiaplah untuk yang terburuk",
-			    "source": "Om Ganteng"
-			  },
-			  {
-			    "quote": "Btw Kamu anak terakhir bukan sih? teserah jawabannya benar atau salah, tapi Kamu yang terakhir di hati ku :) ",
-			    "source": "Om Ganteng"
-			  },
-			  {
-			    "quote": "Ada kalimat yang ingin aku dapatkan dari dia tapi aku dapat dari orang lain",
+			    "quote": "Maaf ya kalau udah berharap lebih :( , gak semua yang kita inginkan itu bisa terwujud sempurna",
 			    "source": "Anonymous"
-			  },
-			  {
-			    "quote": "Cara terbaik untuk memprediksi masa depan adalah dengan membuatnya",
-			    "source": "Abraham Lincoln"
-			  },
-			  {
-			    "quote": "Aku mencintai Kamu itu seperti angin.. tau kenapa? Kamu tidak bisa melihat tapi Kamu bisa merasakan :v ",
-			    "source": "Siapa Hayo.."
-			  },
-			  {
-			    "quote": "Seorang bahagia bukan karena semua benar dalam hidupnya, tapi sikap terhadap hidupnya yang benar",
-			    "source": "Sundar Pichai"
-			  },
-			  {
-			    "quote": "Belajar dari hari kemarin, hidup untuk hari ini, berharap untuk esok hari",
-			    "source": "Albert Einstein"
 			  },
 			]
 			setInterval(randomQuote, 60000);
